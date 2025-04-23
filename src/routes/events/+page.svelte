@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="mt-6 text-center">
-          <a href="/calendar" class="btn-primary">
+          <a href="/kh-website/calendar" class="btn-primary">
             View Full Calendar
           </a>
         </div>

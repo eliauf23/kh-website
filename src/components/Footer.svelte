@@ -30,12 +30,12 @@
     <div class="footer-section">
       <h3>Quick Links</h3>
       <nav>
-        <a href="/about">About</a>
-        <a href="/events">Events</a>
-        <a href="/shabbat">Shabbat</a>
-        <a href="/team">Team</a>
-        <a href="/calendar">Calendar</a>
-        <a href="/donate">Donate</a>
+        <a href="/kh-website/about">About</a>
+        <a href="/kh-website/events">Events</a>
+        <a href="/kh-website/shabbat">Shabbat</a>
+        <a href="/kh-website/team">Team</a>
+        <a href="/kh-website/calendar">Calendar</a>
+        <a href="/kh-website/donate">Donate</a>
       </nav>
     </div>
 

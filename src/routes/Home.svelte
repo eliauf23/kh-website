@@ -5,8 +5,8 @@
       The uptown partnership-style shul community where All Are Welcome. Always.
     </p>
     <div class="cta-buttons">
-      <a href="/events" class="cta-button">Join an Event</a>
-      <a href="/shabbat" class="cta-button secondary">Join us for Shabbat</a>
+      <a href="/kh-website/events" class="cta-button">Join an Event</a>
+      <a href="/kh-website/shabbat" class="cta-button secondary">Join us for Shabbat</a>
     </div>
   </section>
 
@@ -30,7 +30,7 @@
           Join us every Friday evening and Saturday morning for services and
           community.
         </p>
-        <Link to="/shabbat">Learn More</Link>
+        <Link to="/kh-website/shabbat">Learn More</Link>
       </div>
       <div class="event-card">
         <h3>Shtiebel Sundays</h3>
@@ -38,12 +38,12 @@
           Visit our kosher café in Harlem, offering coffee and treats every
           Sunday.
         </p>
-        <Link to="/events">Learn More</Link>
+        <Link to="/kh-website/events">Learn More</Link>
       </div>
       <div class="event-card">
         <h3>Women's Rosh Chodesh</h3>
         <p>Monthly gatherings for Torah study and community building.</p>
-        <Link to="/events">Learn More</Link>
+        <Link to="/kh-website/events">Learn More</Link>
       </div>
     </div>
   </section>

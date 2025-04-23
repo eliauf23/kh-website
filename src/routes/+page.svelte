@@ -7,8 +7,8 @@
         The uptown partnership-style shul community where All Are Welcome. Always.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/events" class="btn-primary">Join an Event</a>
-        <a href="/shabbat" class="btn-secondary">Join us for Shabbat</a>
+        <a href="/kh-website/events" class="btn-primary">Join an Event</a>
+        <a href="/kh-website/shabbat" class="btn-secondary">Join us for Shabbat</a>
       </div>
     </div>
   </section>
@@ -30,19 +30,19 @@
         <div class="bg-white rounded-lg shadow-md p-6">
           <h3 class="text-xl font-bold mb-4">Shabbat Services</h3>
           <p class="text-gray-600 mb-4">Join us every Friday evening and Saturday morning for services and community.</p>
-          <a href="/shabbat" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
+          <a href="/kh-website/shabbat" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
         </div>
         
         <div class="bg-white rounded-lg shadow-md p-6">
           <h3 class="text-xl font-bold mb-4">Shtiebel Sundays</h3>
           <p class="text-gray-600 mb-4">Visit our kosher café in Harlem, offering coffee and treats every Sunday.</p>
-          <a href="/events" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
+          <a href="/kh-website/events" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
         </div>
         
         <div class="bg-white rounded-lg shadow-md p-6">
           <h3 class="text-xl font-bold mb-4">Women's Rosh Chodesh</h3>
           <p class="text-gray-600 mb-4">Monthly gatherings for Torah study and community building.</p>
-          <a href="/events" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
+          <a href="/kh-website/events" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
         </div>
       </div>
     </div>

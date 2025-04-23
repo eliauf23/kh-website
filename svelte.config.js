@@ -8,10 +8,16 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: 'index.html',
-			precompress: false
+			precompress: false,
+			strict: true
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/kh-website' : ''
+			base: process.env.NODE_ENV === 'production' ? '/kh-website' : '',
+			relative: false
+		},
+		prerender: {
+			handleMissingId: 'warn',
+			entries: ['*']
 		}
 	},
 	preprocess: vitePreprocess()
