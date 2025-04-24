@@ -1,150 +1,95 @@
 <script>
-  const givingLevels = [
+  const donationTiers = [
     {
-      name: "Friend",
-      amount: "$180",
-      description: "Support our weekly Shabbat kiddush and community meals.",
-      benefits: [
-        "Recognition in our annual report",
-        "Priority registration for high holiday services"
+      title: "Community Supporter",
+      description: "Support Jewish life in Harlem with a donation of up to $36 each month!",
+      options: [
+        { amount: 18, label: "Make a Monthly $18 Donation", link: "https://buy.stripe.com/cN25m2a6Uf756gUdQR" },
+        { amount: 36, label: "Make a Monthly $36 Donation", link: "https://buy.stripe.com/aEUg0G6UI2kjgVyaEG" }
       ]
     },
     {
-      name: "Sustainer",
-      amount: "$360",
-      description: "Help us maintain and improve our community spaces.",
-      benefits: [
-        "All Friend level benefits",
-        "Reserved seating at high holiday services",
-        "Invitation to annual donor appreciation event"
+      title: "Community Sustainer",
+      description: "Become a community sustainer by donating up to $100 each month to keep our community going!",
+      options: [
+        { amount: 54, label: "Make a Monthly $54 Donation", link: "https://buy.stripe.com/aEUeWCcf26AzgVyfZ1" },
+        { amount: 72, label: "Make a Monthly $72 Donation", link: "https://buy.stripe.com/4gwaGmfre3ongVy28c" },
+        { amount: 100, label: "Make a Monthly $100 Donation", link: "https://buy.stripe.com/bIY15Mena3onbBe7sx" }
       ]
     },
     {
-      name: "Builder",
-      amount: "$1,800",
-      description: "Invest in our community's growth and educational programs.",
-      benefits: [
-        "All Sustainer level benefits",
-        "Private meeting with the Rabbi",
-        "Recognition on our donor wall"
+      title: "Community Builder",
+      description: "Build our community in Harlem with a monthly gift of up to $360!",
+      options: [
+        { amount: 180, label: "Make a Monthly $180 Donation", link: "https://buy.stripe.com/8wM15Ma6U9ML8p2cMS" },
+        { amount: 250, label: "Make a Monthly $250 Donation", link: "https://buy.stripe.com/bIY9Ci92Qe310WA6ov" },
+        { amount: 360, label: "Make a Monthly 360 Donation", link: "https://buy.stripe.com/fZe15Mdj66Az7kYbIQ" }
       ]
-    }
-  ];
-
-  const otherWaysToGive = [
-    {
-      title: "Sponsor a Kiddush",
-      description: "Honor a special occasion or remember a loved one by sponsoring a Shabbat kiddush.",
-      link: "/contact"
     },
     {
-      title: "Planned Giving",
-      description: "Include Kehillat Harlem in your estate planning to ensure our community's future.",
-      link: "/contact"
-    },
-    {
-      title: "Matching Gifts",
-      description: "Many employers match charitable contributions. Check if your company participates.",
-      link: "/contact"
+      title: "Community Sponsor",
+      description: "Sponsor all of the work we are doing in Harlem with a gift of $500 per month or more!",
+      options: [
+        { amount: 500, label: "Make a Monthly $500 Donation", link: "https://buy.stripe.com/6oE4hY3Iw6Az0WA28j" },
+        { amount: 750, label: "Make a Monthly $750 Donation", link: "https://buy.stripe.com/7sIbKqa6Uf757kYaEN" },
+        { amount: 1000, label: "Make a Monthly $1000 Donation", link: "https://buy.stripe.com/cN2g0Gdj6aQPgVyfZ8" }
+      ]
     }
   ];
 </script>
 
-<div class="bg-gray-50 min-h-screen">
-  <!-- Hero Section -->
-  <section class="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-    <div class="absolute inset-0 bg-black/50 z-0"></div>
-    <div class="container relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Support Our Community</h1>
-      <p class="text-xl text-center max-w-2xl mx-auto">
-        Your generous support helps us maintain our inclusive community and expand our programming.
-      </p>
-    </div>
-  </section>
+<div class="container mx-auto px-4 py-12 max-w-6xl">
+  <div class="text-center mb-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">Support Kehillat Harlem</h1>
+    <p class="text-xl mb-4">
+      Please show your commitment to our community through a gift which will help us continue to grow and flourish.
+    </p>
+    <p class="text-lg text-gray-700">
+      The recommended monthly donation for those who can afford it is $100 per person.
+    </p>
+  </div>
 
-  <!-- Giving Levels -->
-  <section class="py-16">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-12 text-center">Annual Giving Levels</h2>
-      <div class="grid gap-8 md:grid-cols-3">
-        {#each givingLevels as level}
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-2xl font-bold mb-2">{level.name}</h3>
-            <div class="text-primary text-3xl font-bold mb-4">{level.amount}</div>
-            <p class="text-gray-600 mb-6">{level.description}</p>
-            <ul class="space-y-2 mb-6">
-              {#each level.benefits as benefit}
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-primary mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{benefit}</span>
-                </li>
-              {/each}
-            </ul>
-            <a href="/contact" class="btn-primary block text-center">
-              Donate {level.amount}
-            </a>
+  <!-- Donation Tiers -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    {#each donationTiers as tier}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-6">
+          <h2 class="text-2xl font-bold mb-4">{tier.title}</h2>
+          <p class="text-gray-600 mb-6">
+            {tier.description}
+          </p>
+          <div class="space-y-3">
+            {#each tier.options as option}
+              <a 
+                href={option.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full text-center px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors duration-200"
+              >
+                {option.label}
+              </a>
+            {/each}
           </div>
-        {/each}
-      </div>
-    </div>
-  </section>
-
-  <!-- Other Ways to Give -->
-  <section class="py-16 bg-white">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-12 text-center">Other Ways to Give</h2>
-      <div class="grid gap-8 md:grid-cols-3">
-        {#each otherWaysToGive as way}
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-xl font-bold mb-3">{way.title}</h3>
-            <p class="text-gray-600 mb-4">{way.description}</p>
-            <a href={way.link} class="text-primary hover:text-primary-dark font-semibold">
-              Learn More →
-            </a>
-          </div>
-        {/each}
-      </div>
-    </div>
-  </section>
-
-  <!-- Tax Information -->
-  <section class="py-16">
-    <div class="container">
-      <div class="bg-primary text-white rounded-lg p-8">
-        <h2 class="text-2xl font-bold mb-4">Tax Information</h2>
-        <p class="text-lg mb-6">
-          Kehillat Harlem is a 501(c)(3) non-profit organization. All donations are tax-deductible to the extent allowed by law.
-        </p>
-        <div class="text-sm opacity-90">
-          Tax ID: XX-XXXXXXX
         </div>
       </div>
-    </div>
-  </section>
+    {/each}
+  </div>
 
-  <!-- Contact -->
-  <section class="py-16 bg-white">
-    <div class="container text-center">
-      <h2 class="text-3xl font-bold mb-6">Questions About Giving?</h2>
-      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        Our team is here to help you with any questions about donations, planned giving, or other ways to support our community.
-      </p>
-      <a href="/contact" class="btn-primary">
-        Contact Us
-      </a>
-    </div>
-  </section>
+  <!-- One Time Gift -->
+  <div class="text-center">
+    <a 
+      href="https://donate.stripe.com/8wM7uafre2kj8p2288"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block px-8 py-4 bg-blue-500 text-white text-xl font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-200"
+    >
+      Click Here to Make a One Time Gift
+    </a>
+  </div>
 </div>
 
 <style lang="postcss">
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .btn-primary {
-    @apply inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold 
-           hover:bg-primary/90 transition-colors duration-200;
+  .bg-primary {
+    @apply bg-blue-600;
   }
 </style> 

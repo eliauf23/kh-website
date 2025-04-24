@@ -1,136 +1,116 @@
 <script>
-  const shabbatServices = [
-    {
-      title: "Friday Night Services",
-      time: "6:30 PM",
-      description: "Welcome in Shabbat with joyful prayer and song, followed by a community dinner."
-    },
-    {
-      title: "Saturday Morning Services",
-      time: "9:00 AM",
-      description: "Torah learning, coffee, and treats followed by Shacharit at 9:30am. Torah reading and musaf will be preceded by first kiddush at 10:15am and followed by second kiddush around 12:30pm."
-    },
-    {
-      title: "Torah Reading",
-      time: "10:15 AM",
-      description: "Torah reading is open to community members of any gender identity to read."
-    }
-  ];
-
-  const monthlyThemes = [
-    {
-      week: "1st Shabbat",
-      theme: "Learner's Shabbat",
-      description: "A service designed for those new to Judaism or looking to deepen their understanding of prayer and ritual."
-    },
-    {
-      week: "2nd Shabbat",
-      theme: "Sushi Shabbat",
-      description: "Join us for a special kiddush featuring sushi and Asian-inspired dishes."
-    },
-    {
-      week: "3rd Shabbat",
-      theme: "Shabbat Around the World",
-      description: "Each month we explore the customs and cuisine of a different Jewish community around the world."
-    },
-    {
-      week: "4th Shabbat",
-      theme: "Harlem Home Hoppin' Meals",
-      description: "Community members host intimate Shabbat meals in their homes."
-    }
+  const fridayNightThemes = [
+    { week: "1st", theme: "Learner's Shabbat" },
+    { week: "2nd", theme: "Sushi Shabbat" },
+    { week: "3rd", theme: "Shabbat Around the World" },
+    { week: "4th", theme: "Harlem Home Hoppin' Meals" },
+    { week: "5th", theme: "When a month has five Shabbats, we celebrate the last one at Harlem Hops" }
   ];
 </script>
 
-<div class="bg-gray-50 min-h-screen">
-  <!-- Hero Section -->
-  <section class="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-    <div class="absolute inset-0 bg-black/50 z-0"></div>
-    <div class="container relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Shabbat with Kehillat Harlem</h1>
-      <p class="text-xl text-center max-w-2xl mx-auto">
-        Join us for warm, inclusive, and spirited Shabbat services. All are welcome—always.
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+  <!-- Friday Night Section -->
+  <section class="mb-16">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl font-bold mb-2">Friday Night Services & Meals</h2>
+      <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+        We gather every Friday evening to pray and connect. Join us for Kabbalat Shabbat at <span class="font-semibold">[TIME]</span>. Each Shabbat of the month has a different theme.
       </p>
-    </div>
-  </section>
-
-  <!-- Service Times -->
-  <section class="py-16">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-12 text-center">Service Times</h2>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {#each shabbatServices as service}
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold mb-2">{service.title}</h3>
-            <div class="text-primary font-semibold mb-3">{service.time}</div>
-            <p class="text-gray-600">{service.description}</p>
-          </div>
-        {/each}
-      </div>
-    </div>
-  </section>
-
-  <!-- Monthly Themes -->
-  <section class="py-16 bg-white">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-12 text-center">Monthly Themes</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        {#each monthlyThemes as theme}
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <div class="text-primary font-semibold mb-2">{theme.week}</div>
-            <h3 class="text-xl font-bold mb-3">{theme.theme}</h3>
-            <p class="text-gray-600">{theme.description}</p>
-          </div>
-        {/each}
-      </div>
-    </div>
-  </section>
-
-  <!-- Additional Info -->
-  <section class="py-16">
-    <div class="container">
-      <div class="bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold mb-6">What to Expect</h2>
-        <div class="grid gap-8 md:grid-cols-2">
-          <div>
-            <h3 class="text-xl font-bold mb-4">Prayer Style</h3>
-            <p class="text-gray-600 mb-4">
-              Our services follow traditional liturgy with a modern, egalitarian approach. We use both Hebrew and English, 
-              and our prayer style incorporates both traditional and contemporary melodies.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold mb-4">Community</h3>
-            <p class="text-gray-600 mb-4">
-              We are a diverse community that welcomes Jews of all backgrounds, as well as their families and friends. 
-              Whether you're new to Jewish prayer or have been davening for years, you'll find a place here.
-            </p>
-          </div>
+      
+      <div class="relative max-w-2xl">
+        <div class="absolute left-[2.5rem] top-0 bottom-0 w-px bg-gray-200"></div>
+        <div class="space-y-4">
+          {#each fridayNightThemes as { week, theme }}
+            <div class="relative flex items-center">
+              <div class="absolute left-[2.5rem] w-2.5 h-2.5 bg-primary rounded-full transform -translate-x-1/2"></div>
+              <div class="ml-16 bg-white rounded-lg shadow-sm p-4 w-full transform transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                <div class="flex items-baseline gap-4">
+                  <span class="text-primary font-semibold">{week}</span>
+                  <span class="font-medium text-gray-900">{theme}</span>
+                </div>
+              </div>
+            </div>
+          {/each}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-16 bg-primary text-white">
-    <div class="container text-center">
-      <h2 class="text-3xl font-bold mb-6">Join Us This Shabbat</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">
-        First time joining us? Let us know you're coming and we'll make sure to welcome you personally.
-      </p>
-      <a href="/contact" class="btn-secondary">
-        Get in Touch
-      </a>
+  <!-- Saturday Morning Section -->
+  <section class="mb-24">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="md:w-1/2 relative">
+        <div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <img
+            src="https://eliauf23.github.io/kh-website/saturday-morning.jpg"
+            alt="Saturday Morning at Kehillat Harlem"
+            class="object-cover w-full h-full"
+          />
+          <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-2xl font-bold border-2 border-white px-6 py-3">
+              PUT SHABBAT GRAPHIC HERE
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:w-1/2">
+        <h2 class="text-2xl font-bold mb-4">Saturday Morning Services</h2>
+        <div class="space-y-4">
+          <p class="text-gray-700">
+            Join us every Saturday at <span class="font-semibold">9am</span> for Torah learning, coffee, and treats followed by Shacharit at <span class="font-semibold">9:30am</span>.
+          </p>
+          <p class="text-gray-700">
+            Torah reading and musaf will be preceded by first kiddush at <span class="font-semibold">10:15am</span> and followed by second kiddush around <span class="font-semibold">12:30pm</span>.
+          </p>
+          <p class="text-gray-700 italic">
+            Torah reading is open to community members of any gender identity to read.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kids Section -->
+  <section class="mb-24">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="md:w-1/2 relative">
+        <div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <img
+            src="https://eliauf23.github.io/kh-website/kidz-shabbat.jpg"
+            alt="Kidz Shabbat at Kehillat Harlem"
+            class="object-cover w-full h-full grayscale"
+          />
+          <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-2xl font-bold border-2 border-white px-6 py-3">
+              KIDZ SHABBAT GRAPHIC
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:w-1/2">
+        <h2 class="text-2xl font-bold mb-4">Kidz Shabbat</h2>
+        <p class="text-gray-700">
+          We celebrate Shabbat together with children's services on the first Shabbat of every month.
+        </p>
+      </div>
     </div>
   </section>
 </div>
 
 <style lang="postcss">
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  .text-primary {
+    @apply text-blue-600;
   }
-
-  .btn-secondary {
-    @apply inline-block bg-white text-primary px-6 py-3 rounded-lg font-semibold 
-           hover:bg-gray-100 transition-colors duration-200;
+  
+  section {
+    @apply transition-all duration-300;
   }
-</style> 
+  
+  img {
+    @apply transition-all duration-500;
+  }
+</style>

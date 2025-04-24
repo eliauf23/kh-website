@@ -3,33 +3,34 @@
     {
       title: "Women's Rosh Chodesh Social",
       date: "Monthly",
-      description: "Join Rebbetzin Liran Messinger monthly to celebrate Rosh Chodesh with Torah, snacks, and drinks! (Note: This event is open to all non-male identified folks who are comfortable in a female centered space).",
-      image: "/images/rosh-chodesh.jpg"
+      description:
+        "Join Rebbetzin Liran Messinger monthly to celebrate Rosh Chodesh with Torah, snacks, and drinks! (Note: This event is open to all non-male identified folks who are comfortable in a female centered space).",
+      image: "/images/rosh-chodesh.jpg",
     },
     {
       title: "Shtiebel Sundays",
       date: "Every Sunday",
-      description: "Join us on Sundays for a rotating lineup of events! Each week, we'll open the ONLY kosher café in Harlem, offering coffee and a selection of sweet treats for all to enjoy.",
-      image: "/images/shtiebel.jpg"
+      // TODO: need to update this description
+      description: `Join us on Sundays for a rotating lineup of events! Each week, we'll open the ONLY kosher café in Harlem, offering coffee and a selection of sweet treats for all to enjoy. \nWe’re excited to launch this initiative in mid-December, featuring Hebrew-speaking hours, an art gallery, and a family Hanukkah party! Interested in showcasing a program at the Shtiebel? Get in touch!`,
+      image: "/images/shtiebel.jpg",
     },
-    {
-      title: "Learners Shabbat",
-      date: "First Shabbat of the Month",
-      description: "A Shabbat service designed for those new to Judaism or looking to deepen their understanding of prayer and ritual.",
-      image: "/images/learners-shabbat.jpg"
-    }
   ];
 </script>
 
 <div class="bg-gray-50 min-h-screen">
   <!-- Hero Section -->
-  <section class="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+  <section
+    class="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white"
+  >
     <div class="absolute inset-0 bg-black/50 z-0"></div>
     <div class="container relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Upcoming Events</h1>
-      <p class="text-xl text-center max-w-2xl mx-auto">
-        Join us for prayer, learning, and community building. All are welcome at Kehillat Harlem events.
-      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">
+        Events
+      </h1>
+      <!-- <p class="text-xl text-center max-w-2xl mx-auto">
+        Join us for prayer, learning, and community building. All are welcome at
+        Kehillat Harlem events.
+      </p> -->
     </div>
   </section>
 
@@ -40,17 +41,22 @@
         {#each upcomingEvents as event}
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="h-48 bg-gray-200">
-              <img 
-                src={event.image} 
+              <img
+                src={event.image}
                 alt={event.title}
                 class="w-full h-full object-cover"
               />
             </div>
             <div class="p-6">
-              <div class="text-sm text-primary font-semibold mb-2">{event.date}</div>
+              <div class="text-sm text-primary font-semibold mb-2">
+                {event.date}
+              </div>
               <h3 class="text-xl font-bold mb-3">{event.title}</h3>
               <p class="text-gray-600 mb-4">{event.description}</p>
-              <a href="/contact" class="inline-block text-primary hover:text-primary-dark font-semibold">
+              <a
+                href="/contact"
+                class="inline-block text-primary hover:text-primary-dark font-semibold"
+              >
                 Learn More →
               </a>
             </div>
@@ -63,7 +69,7 @@
   <!-- Calendar Section -->
   <section class="py-16 bg-white">
     <div class="container">
-      <h2 class="text-3xl font-bold mb-8 text-center">Monthly Calendar</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center">Monthly Calendar (example of what we can put here)</h2>
       <div class="bg-gray-50 p-6 rounded-lg shadow-md">
         <div class="grid gap-4">
           <div class="bg-white p-4 rounded border">
@@ -83,7 +89,9 @@
               </li>
               <li>
                 <div class="text-sm text-primary">March 21</div>
-                <div class="font-semibold">Around the World Shabbat: Mexico</div>
+                <div class="font-semibold">
+                  Around the World Shabbat: Mexico
+                </div>
               </li>
               <li>
                 <div class="text-sm text-primary">March 28</div>
@@ -106,11 +114,10 @@
     <div class="container text-center">
       <h2 class="text-3xl font-bold mb-6">Get Involved</h2>
       <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        Want to help organize events or have an idea for a program? We'd love to hear from you!
+        Want to help organize events or have an idea for a program? We'd love to
+        hear from you!
       </p>
-      <a href="/contact" class="btn-primary">
-        Contact Us
-      </a>
+      <a href="/contact" class="btn-primary"> Contact Us </a>
     </div>
   </section>
 </div>
@@ -124,4 +131,4 @@
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-</style> 
+</style>

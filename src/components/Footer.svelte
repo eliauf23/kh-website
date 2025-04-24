@@ -1,9 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    console.log("Footer mounted");
-  });
 </script>
 
 
@@ -15,12 +10,23 @@
         The uptown partnership-style shul community where All Are Welcome.
         Always.
       </p>
+
+      <!-- TODO: style these more obviously so they're clearly links -->
+
       <div class="social-links">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+          <!-- Subscribe to KH newsletter -->
+          <a href="https://us3.list-manage.com/subscribe?u=7917da8ba10966284661ed310&id=b8928661ab" target="_blank" rel="noopener noreferrer">Subscribe to KH newsletter</a>
+        </div>
+
+      <div class="social-links">
+    
+        <!-- Linktree: https://linktr.ee/kehillatharlem -->
+        <a href="https://linktr.ee/kehillatharlem" target="_blank" rel="noopener noreferrer">Linktree</a>
+        <a href="https://www.facebook.com/KehillatHarlem/" target="_blank" rel="noopener noreferrer"
           >Facebook</a
         >
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/kehillatharlem/"
           target="_blank"
           rel="noopener noreferrer">Instagram</a
         >
@@ -42,8 +48,9 @@
     <div class="footer-section">
       <h3>Contact Us</h3>
       <p>Email: info@kehillatharlem.org</p>
-      <p>Location: Harlem, New York</p>
-      <a href="/contact" class="contact-button">Get in Touch</a>
+      <p>2248 Adam Clayton Powell Jr Blvd<br>
+        Harlem, NY 10027</p>
+      <a href="/kh-website/contact" class="contact-button">Get in Touch</a>
     </div>
   </div>
 
