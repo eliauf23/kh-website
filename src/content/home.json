@@ -1,0 +1,26 @@
+{
+  "title": "Kehillat Harlem",
+  "subtitle": "The uptown partnership-style shul community where All Are Welcome. Always.",
+  "eventLink": "/kh-website/events",
+  "shabbatLink": "/kh-website/shabbat",
+  "welcomeTitle": "Welcome to Our Community",
+  "welcomeDescription": "Kehillat Harlem is a vibrant Jewish community in the heart of Harlem. We are committed to creating an inclusive, welcoming space for Jewish life and learning, where everyone can find their place and grow together.",
+  "eventsTitle": "Upcoming Events",
+  "events": [
+    {
+      "title": "Shabbat Services",
+      "description": "Join us every Friday evening and Saturday morning for services and community.",
+      "link": "/kh-website/shabbat"
+    },
+    {
+      "title": "Shtiebel Sundays",
+      "description": "Visit our kosher café in Harlem, offering coffee and treats every Sunday.",
+      "link": "/kh-website/events"
+    },
+    {
+      "title": "Women's Rosh Chodesh",
+      "description": "Monthly gatherings for Torah study and community building.",
+      "link": "/kh-website/events"
+    }
+  ]
+} 

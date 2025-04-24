@@ -1,49 +1,42 @@
+<script>
+  import content from '$content/home.json';
+</script>
+
 <div class="home">
   <section class="relative py-24 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
     <div class="absolute inset-0 bg-black/50 z-0"></div>
     <div class="container relative z-10 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">Kehillat Harlem</h1>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">{content.title}</h1>
       <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-        The uptown partnership-style shul community where All Are Welcome. Always.
+        {content.subtitle}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/kh-website/events" class="btn-primary">Join an Event</a>
-        <a href="/kh-website/shabbat" class="btn-secondary">Join us for Shabbat</a>
+        <a href={content.eventLink} class="btn-primary">Join an Event</a>
+        <a href={content.shabbatLink} class="btn-secondary">Join us for Shabbat</a>
       </div>
     </div>
   </section>
 
   <section class="py-16 bg-white">
     <div class="container text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Welcome to Our Community</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">{content.welcomeTitle}</h2>
       <p class="max-w-2xl mx-auto text-lg text-gray-600">
-        Kehillat Harlem is a vibrant Jewish community in the heart of Harlem. We are committed to creating an inclusive, 
-        welcoming space for Jewish life and learning, where everyone can find their place and grow together.
+        {content.welcomeDescription}
       </p>
     </div>
   </section>
 
   <section class="py-16 bg-gray-50">
     <div class="container">
-      <h2 class="text-3xl text-center mb-12">Upcoming Events</h2>
+      <h2 class="text-3xl text-center mb-12">{content.eventsTitle}</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-4">Shabbat Services</h3>
-          <p class="text-gray-600 mb-4">Join us every Friday evening and Saturday morning for services and community.</p>
-          <a href="/kh-website/shabbat" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
-        </div>
-        
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-4">Shtiebel Sundays</h3>
-          <p class="text-gray-600 mb-4">Visit our kosher café in Harlem, offering coffee and treats every Sunday.</p>
-          <a href="/kh-website/events" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
-        </div>
-        
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-4">Women's Rosh Chodesh</h3>
-          <p class="text-gray-600 mb-4">Monthly gatherings for Torah study and community building.</p>
-          <a href="/kh-website/events" class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
-        </div>
+        {#each content.events as event}
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-4">{event.title}</h3>
+            <p class="text-gray-600 mb-4">{event.description}</p>
+            <a href={event.link} class="text-primary hover:text-primary-dark font-semibold">Learn More →</a>
+          </div>
+        {/each}
       </div>
     </div>
   </section>

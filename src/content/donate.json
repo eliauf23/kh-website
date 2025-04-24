@@ -1,0 +1,90 @@
+{
+  "pageTitle": "Support Kehillat Harlem",
+  "mainDescription": "Please show your commitment to our community through a gift which will help us continue to grow and flourish.",
+  "recommendedDonation": "The recommended monthly donation for those who can afford it is $100 per person.",
+  "donationTiers": [
+    {
+      "title": "Community Supporter",
+      "description": "Support Jewish life in Harlem with a donation of up to $36 each month!",
+      "options": [
+        {
+          "amount": 18,
+          "label": "Make a Monthly $18 Donation",
+          "link": "https://buy.stripe.com/cN25m2a6Uf756gUdQR"
+        },
+        {
+          "amount": 36,
+          "label": "Make a Monthly $36 Donation",
+          "link": "https://buy.stripe.com/aEUg0G6UI2kjgVyaEG"
+        }
+      ]
+    },
+    {
+      "title": "Community Sustainer",
+      "description": "Become a community sustainer by donating up to $100 each month to keep our community going!",
+      "options": [
+        {
+          "amount": 54,
+          "label": "Make a Monthly $54 Donation",
+          "link": "https://buy.stripe.com/aEUeWCcf26AzgVyfZ1"
+        },
+        {
+          "amount": 72,
+          "label": "Make a Monthly $72 Donation",
+          "link": "https://buy.stripe.com/4gwaGmfre3ongVy28c"
+        },
+        {
+          "amount": 100,
+          "label": "Make a Monthly $100 Donation",
+          "link": "https://buy.stripe.com/bIY15Mena3onbBe7sx"
+        }
+      ]
+    },
+    {
+      "title": "Community Builder",
+      "description": "Build our community in Harlem with a monthly gift of up to $360!",
+      "options": [
+        {
+          "amount": 180,
+          "label": "Make a Monthly $180 Donation",
+          "link": "https://buy.stripe.com/8wM15Ma6U9ML8p2cMS"
+        },
+        {
+          "amount": 250,
+          "label": "Make a Monthly $250 Donation",
+          "link": "https://buy.stripe.com/bIY9Ci92Qe310WA6ov"
+        },
+        {
+          "amount": 360,
+          "label": "Make a Monthly 360 Donation",
+          "link": "https://buy.stripe.com/fZe15Mdj66Az7kYbIQ"
+        }
+      ]
+    },
+    {
+      "title": "Community Sponsor",
+      "description": "Sponsor all of the work we are doing in Harlem with a gift of $500 per month or more!",
+      "options": [
+        {
+          "amount": 500,
+          "label": "Make a Monthly $500 Donation",
+          "link": "https://buy.stripe.com/6oE4hY3Iw6Az0WA28j"
+        },
+        {
+          "amount": 750,
+          "label": "Make a Monthly $750 Donation",
+          "link": "https://buy.stripe.com/7sIbKqa6Uf757kYaEN"
+        },
+        {
+          "amount": 1000,
+          "label": "Make a Monthly $1000 Donation",
+          "link": "https://buy.stripe.com/cN2g0Gdj6aQPgVyfZ8"
+        }
+      ]
+    }
+  ],
+  "oneTimeGift": {
+    "label": "Click Here to Make a One Time Gift",
+    "link": "https://donate.stripe.com/8wM7uafre2kj8p2288"
+  }
+} 
