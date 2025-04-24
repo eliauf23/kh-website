@@ -1,63 +1,81 @@
 <script lang="ts">
-  import content from '$content/layout.json';
+  import content from '../content/site.json';
 </script>
 
 <footer>
   <div class="footer-content">
+    <!-- Organization Info -->
     <div class="footer-section">
-      <h3>{content.footer.about.title}</h3>
-      <p>{content.footer.about.description}</p>
-
-      <div class="social-links">
-        <a 
-          href={content.footer.about.newsletter.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          {content.footer.about.newsletter.text}
-        </a>
-      </div>
-
-      <div class="social-links">
-        {#each content.footer.about.socialLinks as link}
-          <a 
-            href={link.href} 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            {link.text}
-          </a>
-        {/each}
-      </div>
+      <h3>{content.organization.name}</h3>
+      <p>{content.organization.tagline}</p>
+      <p>{content.contact.address.full}</p>
+      <a href={`mailto:${content.contact.email}`} class="contact-link">
+        {content.contact.email}
+      </a>
     </div>
 
+    <!-- Quick Links -->
     <div class="footer-section">
-      <h3>{content.footer.quickLinks.title}</h3>
+      <h3>Quick Links</h3>
       <nav>
-        {#each content.footer.quickLinks.links as link}
-          <a href={link.href}>{link.text}</a>
+        {#each content.navigation.links as link}
+          <a href={link.href}>
+            {link.text}
+          </a>
         {/each}
       </nav>
     </div>
 
+    <!-- Connect -->
     <div class="footer-section">
-      <h3>{content.footer.contact.title}</h3>
-      <p>Email: {content.footer.contact.email}</p>
-      <p>
-        {content.footer.contact.address.street}<br>
-        {content.footer.contact.address.city}
-      </p>
-      <a 
-        href={content.footer.contact.button.href} 
+      <h3>Connect</h3>
+      <div class="social-links">
+        <a
+          href={content.social.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+        <a
+          href={content.social.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+        <a
+          href={content.social.linktree}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Linktree
+        </a>
+      </div>
+      <a
+        href={content.social.newsletter.link}
         class="contact-button"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        {content.footer.contact.button.text}
+        {content.social.newsletter.text}
+      </a>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="footer-section">
+      <h3>Take Action</h3>
+      <a href={content.cta.contact.href} class="contact-button secondary">
+        {content.cta.contact.text}
+      </a>
+      <a href={content.cta.donate.href} class="contact-button">
+        {content.cta.donate.text}
       </a>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; {new Date().getFullYear()} Kehillat Harlem. All rights reserved.</p>
+    <p>&copy; {new Date().getFullYear()} {content.organization.name}. All rights reserved.</p>
   </div>
 </footer>
 
@@ -80,6 +98,8 @@
   .footer-section h3 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
   }
 
   .footer-section p {
@@ -87,10 +107,20 @@
     opacity: 0.8;
   }
 
+  .contact-link {
+    color: var(--primary-color);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .contact-link:hover {
+    opacity: 1;
+  }
+
   .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .social-links a {
@@ -110,30 +140,39 @@
     gap: 0.5rem;
   }
 
-  nav :global(a) {
+  nav a {
     color: white;
     opacity: 0.8;
     transition: opacity 0.2s;
   }
 
-  nav :global(a:hover) {
+  nav a:hover {
     opacity: 1;
     text-decoration: none;
   }
 
   .contact-button {
-    display: inline-block;
+    display: block;
     background: var(--primary-color);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 4px;
     margin-top: 1rem;
     transition: background-color 0.2s;
+    text-align: center;
+  }
+
+  .contact-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .contact-button:hover {
     background: #ff5252;
     text-decoration: none;
+  }
+
+  .contact-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
 
   .footer-bottom {

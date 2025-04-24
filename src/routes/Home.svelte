@@ -23,16 +23,7 @@
     </div>
   </section>
 
-  <section class="image-gallery">
-    <div class="image-grid">
-      <!-- svelte-ignore a11y-img-redundant-alt -->
-      <img
-        src="https://eliauf23.github.io/kh-website/homepage-image.jpg"
-        alt="Homepage Image"
-        class="gallery-image"
-      />
-    </div>
-  </section>
+
   <section class="featured-events">
     <h2>Upcoming Events</h2>
     <div class="event-grid">

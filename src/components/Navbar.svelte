@@ -1,5 +1,5 @@
 <script>
-  import content from '$content/layout.json';
+  import content from '$content/site.json';
   let isMenuOpen = false;
   const toggleMenu = () => (isMenuOpen = !isMenuOpen);
   import { page } from "$app/stores";
@@ -13,8 +13,8 @@
         class="flex items-center space-x-3"
       >
         <img
-          src={content.navigation.logo.src}
-          alt={content.navigation.logo.alt}
+          src={content.organization.logo.src}
+          alt={content.organization.logo.alt}
           class="h-10 w-auto"
         />
       </a>

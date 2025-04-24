@@ -1,0 +1,68 @@
+{
+  "organization": {
+    "name": "Kehillat Harlem",
+    "tagline": "The uptown partnership-style shul community where All Are Welcome. Always.",
+    "logo": {
+      "src": "https://eliauf23.github.io/kh-website/logo.png",
+      "alt": "Kehillat Harlem"
+    }
+  },
+  "contact": {
+    "email": "info@kehillatharlem.org",
+    "address": {
+      "street": "2248 Adam Clayton Powell Jr Blvd",
+      "city": "Harlem",
+      "state": "NY",
+      "zip": "10027",
+      "full": "2248 Adam Clayton Powell Jr Blvd, Harlem, NY 10027"
+    }
+  },
+  "social": {
+    "linktree": "https://linktr.ee/kehillatharlem",
+    "facebook": "https://www.facebook.com/KehillatHarlem/",
+    "instagram": "https://www.instagram.com/kehillatharlem/",
+    "newsletter": {
+      "text": "Subscribe to KH newsletter",
+      "link": "https://us3.list-manage.com/subscribe?u=7917da8ba10966284661ed310&id=b8928661ab"
+    }
+  },
+  "navigation": {
+    "links": [
+      {
+        "text": "About",
+        "href": "/kh-website/about"
+      },
+      {
+        "text": "Events",
+        "href": "/kh-website/events"
+      },
+      {
+        "text": "Shabbat",
+        "href": "/kh-website/shabbat"
+      },
+      {
+        "text": "Team",
+        "href": "/kh-website/team"
+      },
+      {
+        "text": "Calendar",
+        "href": "/kh-website/calendar"
+      },
+      {
+        "text": "Donate",
+        "href": "/kh-website/donate",
+        "isPrimary": true
+      }
+    ]
+  },
+  "cta": {
+    "contact": {
+      "text": "Get in Touch",
+      "href": "/kh-website/contact"
+    },
+    "donate": {
+      "text": "Support Our Community",
+      "href": "/kh-website/donate"
+    }
+  }
+} 
