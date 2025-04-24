@@ -32,12 +32,12 @@
     "saturdayMorning": {
       "title": "Saturday Morning Services",
       "description": "Join us every Saturday at 9am for Torah learning, coffee, and treats followed by Shacharit at 9:30am. Torah reading and musaf will be preceded by first kiddush at 10:15am and followed by second kiddush around 12:30pm. Torah reading is open to community members of any gender identity to read.",
-      "image": "/images/saturday-morning.jpg"
+      "image": "https://eliauf23.github.io/kh-website/saturday-morning.jpg"
     },
     "kidzShabbat": {
       "title": "Kidz Shabbat",
       "description": "We celebrate Shabbat together with children's services on the first Shabbat of every month.",
-      "image": "/images/kidz-shabbat.jpg"
+      "image": "https://eliauf23.github.io/kh-website/kidz-shabbat.jpg"
     }
   }
 } 

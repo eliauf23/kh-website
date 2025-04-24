@@ -1,63 +1,63 @@
 <script lang="ts">
+  import content from '$content/layout.json';
 </script>
-
 
 <footer>
   <div class="footer-content">
     <div class="footer-section">
-      <h3>Kehillat Harlem</h3>
-      <p>
-        The uptown partnership-style shul community where All Are Welcome.
-        Always.
-      </p>
-
-      <!-- TODO: style these more obviously so they're clearly links -->
+      <h3>{content.footer.about.title}</h3>
+      <p>{content.footer.about.description}</p>
 
       <div class="social-links">
-          <!-- Subscribe to KH newsletter -->
-          <a href="https://us3.list-manage.com/subscribe?u=7917da8ba10966284661ed310&id=b8928661ab" target="_blank" rel="noopener noreferrer">Subscribe to KH newsletter</a>
-        </div>
+        <a 
+          href={content.footer.about.newsletter.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          {content.footer.about.newsletter.text}
+        </a>
+      </div>
 
       <div class="social-links">
-    
-        <!-- Linktree: https://linktr.ee/kehillatharlem -->
-        <a href="https://linktr.ee/kehillatharlem" target="_blank" rel="noopener noreferrer">Linktree</a>
-        <a href="https://www.facebook.com/KehillatHarlem/" target="_blank" rel="noopener noreferrer"
-          >Facebook</a
-        >
-        <a
-          href="https://www.instagram.com/kehillatharlem/"
-          target="_blank"
-          rel="noopener noreferrer">Instagram</a
-        >
+        {#each content.footer.about.socialLinks as link}
+          <a 
+            href={link.href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            {link.text}
+          </a>
+        {/each}
       </div>
     </div>
 
     <div class="footer-section">
-      <h3>Quick Links</h3>
+      <h3>{content.footer.quickLinks.title}</h3>
       <nav>
-        <a href="/kh-website/about">About</a>
-        <a href="/kh-website/events">Events</a>
-        <a href="/kh-website/shabbat">Shabbat</a>
-        <a href="/kh-website/team">Team</a>
-        <a href="/kh-website/calendar">Calendar</a>
-        <a href="/kh-website/donate">Donate</a>
+        {#each content.footer.quickLinks.links as link}
+          <a href={link.href}>{link.text}</a>
+        {/each}
       </nav>
     </div>
 
     <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p>Email: info@kehillatharlem.org</p>
-      <p>2248 Adam Clayton Powell Jr Blvd<br>
-        Harlem, NY 10027</p>
-      <a href="/kh-website/contact" class="contact-button">Get in Touch</a>
+      <h3>{content.footer.contact.title}</h3>
+      <p>Email: {content.footer.contact.email}</p>
+      <p>
+        {content.footer.contact.address.street}<br>
+        {content.footer.contact.address.city}
+      </p>
+      <a 
+        href={content.footer.contact.button.href} 
+        class="contact-button"
+      >
+        {content.footer.contact.button.text}
+      </a>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>
-      &copy; {new Date().getFullYear()} Kehillat Harlem. All rights reserved.
-    </p>
+    <p>&copy; {new Date().getFullYear()} Kehillat Harlem. All rights reserved.</p>
   </div>
 </footer>
 

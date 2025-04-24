@@ -1,4 +1,5 @@
 <script>
+  import content from '$content/layout.json';
   let isMenuOpen = false;
   const toggleMenu = () => (isMenuOpen = !isMenuOpen);
   import { page } from "$app/stores";
@@ -12,8 +13,8 @@
         class="flex items-center space-x-3"
       >
         <img
-          src="https://eliauf23.github.io/kh-website/logo.png"
-          alt="Kehillat Harlem"
+          src={content.navigation.logo.src}
+          alt={content.navigation.logo.alt}
           class="h-10 w-auto"
         />
       </a>
@@ -39,26 +40,27 @@
       </button>
 
       <div class="hidden md:flex items-center space-x-8">
-        <a href="/kh-website/about" class="nav-link">About</a>
-        <a href="/kh-website/events" class="nav-link">Events</a>
-        <a href="/kh-website/shabbat" class="nav-link">Shabbat</a>
-        <a href="/kh-website/team" class="nav-link">Team</a>
-        <a href="/kh-website/calendar" class="nav-link">Calendar</a>
-        <a href="/kh-website/donate" class="btn-primary">Donate</a>
+        {#each content.navigation.links as link}
+          <a 
+            href={link.href} 
+            class={link.isPrimary ? "btn-primary" : "nav-link"}
+          >
+            {link.text}
+          </a>
+        {/each}
       </div>
     </div>
 
     {#if isMenuOpen}
       <div class="md:hidden py-4 space-y-2">
-        <a href="/kh-website/about" class="mobile-nav-link">About</a>
-        <a href="/kh-website/events" class="mobile-nav-link">Events</a>
-        <a href="/kh-website/shabbat" class="mobile-nav-link">Shabbat</a>
-        <a href="/kh-website/team" class="mobile-nav-link">Team</a>
-        <a href="/kh-website/calendar" class="mobile-nav-link">Calendar</a>
-        <a
-          href="/kh-website/donate"
-          class="mobile-nav-link text-primary font-semibold">Donate</a
-        >
+        {#each content.navigation.links as link}
+          <a 
+            href={link.href} 
+            class={link.isPrimary ? "mobile-nav-link text-primary font-semibold" : "mobile-nav-link"}
+          >
+            {link.text}
+          </a>
+        {/each}
       </div>
     {/if}
   </div>

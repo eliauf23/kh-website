@@ -1,20 +1,5 @@
 <script>
-  const upcomingEvents = [
-    {
-      title: "Women's Rosh Chodesh Social",
-      date: "Monthly",
-      description:
-        "Join Rebbetzin Liran Messinger monthly to celebrate Rosh Chodesh with Torah, snacks, and drinks! (Note: This event is open to all non-male identified folks who are comfortable in a female centered space).",
-      image: "/images/rosh-chodesh.jpg",
-    },
-    {
-      title: "Shtiebel Sundays",
-      date: "Every Sunday",
-      // TODO: need to update this description
-      description: `Join us on Sundays for a rotating lineup of events! Each week, we'll open the ONLY kosher café in Harlem, offering coffee and a selection of sweet treats for all to enjoy. \nWe’re excited to launch this initiative in mid-December, featuring Hebrew-speaking hours, an art gallery, and a family Hanukkah party! Interested in showcasing a program at the Shtiebel? Get in touch!`,
-      image: "/images/shtiebel.jpg",
-    },
-  ];
+  import content from '$content/events.json';
 </script>
 
 <div class="bg-gray-50 min-h-screen">
@@ -25,12 +10,8 @@
     <div class="absolute inset-0 bg-black/50 z-0"></div>
     <div class="container relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">
-        Events
+        {content.hero.title}
       </h1>
-      <!-- <p class="text-xl text-center max-w-2xl mx-auto">
-        Join us for prayer, learning, and community building. All are welcome at
-        Kehillat Harlem events.
-      </p> -->
     </div>
   </section>
 
@@ -38,7 +19,7 @@
   <section class="py-16">
     <div class="container">
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {#each upcomingEvents as event}
+        {#each content.upcomingEvents as event}
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="h-48 bg-gray-200">
               <img
@@ -69,34 +50,18 @@
   <!-- Calendar Section -->
   <section class="py-16 bg-white">
     <div class="container">
-      <h2 class="text-3xl font-bold mb-8 text-center">Monthly Calendar (example of what we can put here)</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center">{content.calendar.title}</h2>
       <div class="bg-gray-50 p-6 rounded-lg shadow-md">
         <div class="grid gap-4">
           <div class="bg-white p-4 rounded border">
-            <h3 class="font-bold">March 2024</h3>
+            <h3 class="font-bold">{content.calendar.month}</h3>
             <ul class="mt-4 space-y-4">
-              <li>
-                <div class="text-sm text-primary">March 7</div>
-                <div class="font-semibold">Learners Shabbat</div>
-              </li>
-              <li>
-                <div class="text-sm text-primary">March 13</div>
-                <div class="font-semibold">Rosh KH: Purim</div>
-              </li>
-              <li>
-                <div class="text-sm text-primary">March 14</div>
-                <div class="font-semibold">Purim Day + Sushi Shabbat</div>
-              </li>
-              <li>
-                <div class="text-sm text-primary">March 21</div>
-                <div class="font-semibold">
-                  Around the World Shabbat: Mexico
-                </div>
-              </li>
-              <li>
-                <div class="text-sm text-primary">March 28</div>
-                <div class="font-semibold">Harlem Home Hoppin'</div>
-              </li>
+              {#each content.calendar.events as event}
+                <li>
+                  <div class="text-sm text-primary">{event.date}</div>
+                  <div class="font-semibold">{event.title}</div>
+                </li>
+              {/each}
             </ul>
           </div>
         </div>
@@ -112,12 +77,13 @@
   <!-- Get Involved -->
   <section class="py-16">
     <div class="container text-center">
-      <h2 class="text-3xl font-bold mb-6">Get Involved</h2>
+      <h2 class="text-3xl font-bold mb-6">{content.getInvolved.title}</h2>
       <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        Want to help organize events or have an idea for a program? We'd love to
-        hear from you!
+        {content.getInvolved.description}
       </p>
-      <a href="/contact" class="btn-primary"> Contact Us </a>
+      <a href={content.getInvolved.buttonLink} class="btn-primary">
+        {content.getInvolved.buttonText}
+      </a>
     </div>
   </section>
 </div>

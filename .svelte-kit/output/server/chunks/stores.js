@@ -1,4 +1,4 @@
-import { g as getContext } from "./ssr.js";
+import { h as getContext } from "./ssr.js";
 import "./exports.js";
 import { o as onMount } from "./ssr2.js";
 function get(key, parse = JSON.parse) {

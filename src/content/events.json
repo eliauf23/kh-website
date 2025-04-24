@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Events"
+  },
+  "upcomingEvents": [
+    {
+      "title": "Women's Rosh Chodesh Social",
+      "date": "Monthly",
+      "description": "Join Rebbetzin Liran Messinger monthly to celebrate Rosh Chodesh with Torah, snacks, and drinks! (Note: This event is open to all non-male identified folks who are comfortable in a female centered space).",
+      "image": "https://eliauf23.github.io/kh-website/rosh-chodesh.png"
+    },
+    {
+      "title": "Shtiebel Sundays",
+      "date": "Every Sunday",
+      "description": "Join us on Sundays for a rotating lineup of events! Each week, we'll open the ONLY kosher café in Harlem, offering coffee and a selection of sweet treats for all to enjoy. \nWe're excited to launch this initiative in mid-December, featuring Hebrew-speaking hours, an art gallery, and a family Hanukkah party! Interested in showcasing a program at the Shtiebel? Get in touch!",
+      "image": "https://eliauf23.github.io/kh-website/shtiebel-sundays.jpg"
+    }
+  ],
+  "calendar": {
+    "title": "Monthly Calendar (example of what we can put here)",
+    "month": "March 2024",
+    "events": [
+      {
+        "date": "March 7",
+        "title": "Learners Shabbat"
+      },
+      {
+        "date": "March 13",
+        "title": "Rosh KH: Purim"
+      },
+      {
+        "date": "March 14",
+        "title": "Purim Day + Sushi Shabbat"
+      },
+      {
+        "date": "March 21",
+        "title": "Around the World Shabbat: Mexico"
+      },
+      {
+        "date": "March 28",
+        "title": "Harlem Home Hoppin'"
+      }
+    ]
+  },
+  "getInvolved": {
+    "title": "Get Involved",
+    "description": "Want to help organize events or have an idea for a program? We'd love to hear from you!",
+    "buttonText": "Contact Us",
+    "buttonLink": "/contact"
+  }
+} 

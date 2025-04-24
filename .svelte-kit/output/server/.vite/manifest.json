@@ -58,6 +58,12 @@
       "_ssr.js"
     ]
   },
+  "src/content/shabbat.json": {
+    "file": "chunks/shabbat.js",
+    "name": "shabbat",
+    "src": "src/content/shabbat.json",
+    "isDynamicEntry": true
+  },
   "src/routes/+layout.svelte": {
     "file": "entries/pages/_layout.svelte.js",
     "name": "entries/pages/_layout.svelte",
@@ -68,7 +74,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.C1htv6IT.css"
+      "_app/immutable/assets/_layout.B5K60-UP.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -83,6 +89,18 @@
       "_app/immutable/assets/_page.BNOFKra1.css"
     ]
   },
+  "src/routes/about/+page.svelte": {
+    "file": "entries/pages/about/_page.svelte.js",
+    "name": "entries/pages/about/_page.svelte",
+    "src": "src/routes/about/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.ApPe9NVu.css"
+    ]
+  },
   "src/routes/calendar/+page.svelte": {
     "file": "entries/pages/calendar/_page.svelte.js",
     "name": "entries/pages/calendar/_page.svelte",
@@ -90,9 +108,6 @@
     "isEntry": true,
     "imports": [
       "_ssr.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page.CPVCapd4.css"
     ]
   },
   "src/routes/donate/+page.svelte": {
@@ -104,7 +119,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DYJ_edFQ.css"
+      "_app/immutable/assets/_page.Cy7ntc-8.css"
     ]
   },
   "src/routes/events/+page.svelte": {
@@ -127,8 +142,11 @@
     "imports": [
       "_ssr.js"
     ],
+    "dynamicImports": [
+      "src/content/shabbat.json"
+    ],
     "css": [
-      "_app/immutable/assets/_page.YKvlmPR1.css"
+      "_app/immutable/assets/_page.D0eLtupq.css"
     ]
   },
   "src/routes/team/+page.svelte": {

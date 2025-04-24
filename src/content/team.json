@@ -1,0 +1,33 @@
+{
+  "rabbi": {
+    "name": "Rabbi Kyle Savitch",
+    "bio": "Rabbi Savitch received semikha from Yeshivat Chovevei Torah in 2021. He has been active in the Harlem Jewish community since 2016 and helped to found the Harlem Moishe House in 2018. Kyle and his wife, Liran, live in Central Harlem where they enjoy having guests for Shabbat meals. In his free time, Kyle enjoys cooking and rock climbing.",
+    "image": "https://eliauf23.github.io/kh-website/rabbi-kyle.jpeg"
+  },
+  "trustees": [
+    { "name": "Elizabeth Aufzien", "image": "https://eliauf23.github.io/kh-website/elizabeth-aufzien.jpg" },
+    { "name": "Mark Eckstein", "image": "https://eliauf23.github.io/kh-website/mark-eckstein.png" },
+    { "name": "Arielle Flax", "image": "https://eliauf23.github.io/kh-website/arielle-flax.jpg" },
+    { "name": "Marisa Laks", "image": "https://eliauf23.github.io/kh-website/marisa-laks.jpg" },
+    { "name": "Adam Rosenberg", "image": "https://eliauf23.github.io/kh-website/adam-rosenberg.jpg" },
+    { "name": "Jonathan Schachter", "image": "https://eliauf23.github.io/kh-website/jonathan-schachter.png" },
+    { "name": "Jay Worenklein", "image": "https://eliauf23.github.io/kh-website/jay-worenklein.png" }
+  ],
+  "leadershipCommittee": [
+    "Arielle Flax",
+    "Liran Messinger",
+    "Zachary Carruthers-Rothberg",
+    "Ariel Kaye",
+    "Chesed Leon",
+    "Sam Lipschitz",
+    "Michel Liv",
+    "Sarah Schecker",
+    "Jonathan Zuckerman"
+  ],
+  "getInvolved": {
+    "title": "Get Involved",
+    "description": "Interested in contributing to our community? We're always looking for volunteers and committee members.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/contact"
+  }
+} 

@@ -1,0 +1,100 @@
+{
+  "navigation": {
+    "logo": {
+      "src": "https://eliauf23.github.io/kh-website/logo.png",
+      "alt": "Kehillat Harlem"
+    },
+    "links": [
+      {
+        "text": "About",
+        "href": "/kh-website/about"
+      },
+      {
+        "text": "Events",
+        "href": "/kh-website/events"
+      },
+      {
+        "text": "Shabbat",
+        "href": "/kh-website/shabbat"
+      },
+      {
+        "text": "Team",
+        "href": "/kh-website/team"
+      },
+      {
+        "text": "Calendar",
+        "href": "/kh-website/calendar"
+      },
+      {
+        "text": "Donate",
+        "href": "/kh-website/donate",
+        "isPrimary": true
+      }
+    ]
+  },
+  "footer": {
+    "about": {
+      "title": "Kehillat Harlem",
+      "description": "The uptown partnership-style shul community where All Are Welcome. Always.",
+      "newsletter": {
+        "text": "Subscribe to KH newsletter",
+        "link": "https://us3.list-manage.com/subscribe?u=7917da8ba10966284661ed310&id=b8928661ab"
+      },
+      "socialLinks": [
+        {
+          "text": "Linktree",
+          "href": "https://linktr.ee/kehillatharlem"
+        },
+        {
+          "text": "Facebook",
+          "href": "https://www.facebook.com/KehillatHarlem/"
+        },
+        {
+          "text": "Instagram",
+          "href": "https://www.instagram.com/kehillatharlem/"
+        }
+      ]
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": [
+        {
+          "text": "About",
+          "href": "/kh-website/about"
+        },
+        {
+          "text": "Events",
+          "href": "/kh-website/events"
+        },
+        {
+          "text": "Shabbat",
+          "href": "/kh-website/shabbat"
+        },
+        {
+          "text": "Team",
+          "href": "/kh-website/team"
+        },
+        {
+          "text": "Calendar",
+          "href": "/kh-website/calendar"
+        },
+        {
+          "text": "Donate",
+          "href": "/kh-website/donate"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "email": "info@kehillatharlem.org",
+      "address": {
+        "street": "2248 Adam Clayton Powell Jr Blvd",
+        "city": "Harlem, NY 10027"
+      },
+      "button": {
+        "text": "Get in Touch",
+        "href": "/kh-website/contact"
+      }
+    }
+  }
+} 

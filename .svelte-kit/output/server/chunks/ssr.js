@@ -1,5 +1,9 @@
 function noop() {
 }
+function is_promise(value) {
+  return !!value && (typeof value === "object" || typeof value === "function") && typeof /** @type {any} */
+  value.then === "function";
+}
 function run(fn) {
   return fn();
 }
@@ -21,6 +25,9 @@ function subscribe(store, ...callbacks) {
   }
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+}
+function null_to_empty(value) {
+  return value == null ? "" : value;
 }
 let current_component;
 function set_current_component(component) {
@@ -123,9 +130,11 @@ export {
   subscribe as b,
   create_ssr_component as c,
   add_attribute as d,
-  escape as e,
-  each as f,
-  getContext as g,
+  each as e,
+  escape as f,
+  null_to_empty as g,
+  getContext as h,
+  is_promise as i,
   missing_component as m,
   noop as n,
   safe_not_equal as s,

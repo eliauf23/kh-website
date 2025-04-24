@@ -1,65 +1,111 @@
-import { c as create_ssr_component, f as each, e as escape, d as add_attribute } from "../../../chunks/ssr.js";
+import { c as create_ssr_component, f as escape, e as each, d as add_attribute } from "../../../chunks/ssr.js";
+const pageTitle = "Support Kehillat Harlem";
+const mainDescription = "Please show your commitment to our community through a gift which will help us continue to grow and flourish.";
+const recommendedDonation = "The recommended monthly donation for those who can afford it is $100 per person.";
+const donationTiers = [
+  {
+    title: "Community Supporter",
+    description: "Support Jewish life in Harlem with a donation of up to $36 each month!",
+    options: [
+      {
+        amount: 18,
+        label: "Make a Monthly $18 Donation",
+        link: "https://buy.stripe.com/cN25m2a6Uf756gUdQR"
+      },
+      {
+        amount: 36,
+        label: "Make a Monthly $36 Donation",
+        link: "https://buy.stripe.com/aEUg0G6UI2kjgVyaEG"
+      }
+    ]
+  },
+  {
+    title: "Community Sustainer",
+    description: "Become a community sustainer by donating up to $100 each month to keep our community going!",
+    options: [
+      {
+        amount: 54,
+        label: "Make a Monthly $54 Donation",
+        link: "https://buy.stripe.com/aEUeWCcf26AzgVyfZ1"
+      },
+      {
+        amount: 72,
+        label: "Make a Monthly $72 Donation",
+        link: "https://buy.stripe.com/4gwaGmfre3ongVy28c"
+      },
+      {
+        amount: 100,
+        label: "Make a Monthly $100 Donation",
+        link: "https://buy.stripe.com/bIY15Mena3onbBe7sx"
+      }
+    ]
+  },
+  {
+    title: "Community Builder",
+    description: "Build our community in Harlem with a monthly gift of up to $360!",
+    options: [
+      {
+        amount: 180,
+        label: "Make a Monthly $180 Donation",
+        link: "https://buy.stripe.com/8wM15Ma6U9ML8p2cMS"
+      },
+      {
+        amount: 250,
+        label: "Make a Monthly $250 Donation",
+        link: "https://buy.stripe.com/bIY9Ci92Qe310WA6ov"
+      },
+      {
+        amount: 360,
+        label: "Make a Monthly 360 Donation",
+        link: "https://buy.stripe.com/fZe15Mdj66Az7kYbIQ"
+      }
+    ]
+  },
+  {
+    title: "Community Sponsor",
+    description: "Sponsor all of the work we are doing in Harlem with a gift of $500 per month or more!",
+    options: [
+      {
+        amount: 500,
+        label: "Make a Monthly $500 Donation",
+        link: "https://buy.stripe.com/6oE4hY3Iw6Az0WA28j"
+      },
+      {
+        amount: 750,
+        label: "Make a Monthly $750 Donation",
+        link: "https://buy.stripe.com/7sIbKqa6Uf757kYaEN"
+      },
+      {
+        amount: 1e3,
+        label: "Make a Monthly $1000 Donation",
+        link: "https://buy.stripe.com/cN2g0Gdj6aQPgVyfZ8"
+      }
+    ]
+  }
+];
+const oneTimeGift = {
+  label: "Click Here to Make a One Time Gift",
+  link: "https://donate.stripe.com/8wM7uafre2kj8p2288"
+};
+const content = {
+  pageTitle,
+  mainDescription,
+  recommendedDonation,
+  donationTiers,
+  oneTimeGift
+};
 const css = {
-  code: ".container.svelte-1b57m3i{margin-left:auto;margin-right:auto;max-width:80rem;padding-left:1rem;padding-right:1rem\n}@media(min-width: 640px){.container.svelte-1b57m3i{padding-left:1.5rem;padding-right:1.5rem\n    }}@media(min-width: 1024px){.container.svelte-1b57m3i{padding-left:2rem;padding-right:2rem\n    }}.btn-primary.svelte-1b57m3i{display:inline-block;border-radius:0.5rem;--tw-bg-opacity:1;background-color:rgb(255 107 107 / var(--tw-bg-opacity, 1));padding-left:1.5rem;padding-right:1.5rem;padding-top:0.75rem;padding-bottom:0.75rem;font-weight:600;--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:200ms\n}.btn-primary.svelte-1b57m3i:hover{background-color:rgb(255 107 107 / 0.9)\n}",
-  map: `{"version":3,"file":"+page.svelte","sources":["+page.svelte"],"sourcesContent":["<script>\\n  const givingLevels = [\\n    {\\n      name: \\"Friend\\",\\n      amount: \\"$180\\",\\n      description: \\"Support our weekly Shabbat kiddush and community meals.\\",\\n      benefits: [\\n        \\"Recognition in our annual report\\",\\n        \\"Priority registration for high holiday services\\"\\n      ]\\n    },\\n    {\\n      name: \\"Sustainer\\",\\n      amount: \\"$360\\",\\n      description: \\"Help us maintain and improve our community spaces.\\",\\n      benefits: [\\n        \\"All Friend level benefits\\",\\n        \\"Reserved seating at high holiday services\\",\\n        \\"Invitation to annual donor appreciation event\\"\\n      ]\\n    },\\n    {\\n      name: \\"Builder\\",\\n      amount: \\"$1,800\\",\\n      description: \\"Invest in our community's growth and educational programs.\\",\\n      benefits: [\\n        \\"All Sustainer level benefits\\",\\n        \\"Private meeting with the Rabbi\\",\\n        \\"Recognition on our donor wall\\"\\n      ]\\n    }\\n  ];\\n\\n  const otherWaysToGive = [\\n    {\\n      title: \\"Sponsor a Kiddush\\",\\n      description: \\"Honor a special occasion or remember a loved one by sponsoring a Shabbat kiddush.\\",\\n      link: \\"/contact\\"\\n    },\\n    {\\n      title: \\"Planned Giving\\",\\n      description: \\"Include Kehillat Harlem in your estate planning to ensure our community's future.\\",\\n      link: \\"/contact\\"\\n    },\\n    {\\n      title: \\"Matching Gifts\\",\\n      description: \\"Many employers match charitable contributions. Check if your company participates.\\",\\n      link: \\"/contact\\"\\n    }\\n  ];\\n<\/script>\\n\\n<div class=\\"bg-gray-50 min-h-screen\\">\\n  <!-- Hero Section -->\\n  <section class=\\"relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white\\">\\n    <div class=\\"absolute inset-0 bg-black/50 z-0\\"></div>\\n    <div class=\\"container relative z-10\\">\\n      <h1 class=\\"text-4xl md:text-5xl font-bold mb-6 text-center\\">Support Our Community</h1>\\n      <p class=\\"text-xl text-center max-w-2xl mx-auto\\">\\n        Your generous support helps us maintain our inclusive community and expand our programming.\\n      </p>\\n    </div>\\n  </section>\\n\\n  <!-- Giving Levels -->\\n  <section class=\\"py-16\\">\\n    <div class=\\"container\\">\\n      <h2 class=\\"text-3xl font-bold mb-12 text-center\\">Annual Giving Levels</h2>\\n      <div class=\\"grid gap-8 md:grid-cols-3\\">\\n        {#each givingLevels as level}\\n          <div class=\\"bg-white rounded-lg shadow-md p-6\\">\\n            <h3 class=\\"text-2xl font-bold mb-2\\">{level.name}</h3>\\n            <div class=\\"text-primary text-3xl font-bold mb-4\\">{level.amount}</div>\\n            <p class=\\"text-gray-600 mb-6\\">{level.description}</p>\\n            <ul class=\\"space-y-2 mb-6\\">\\n              {#each level.benefits as benefit}\\n                <li class=\\"flex items-start\\">\\n                  <svg class=\\"w-5 h-5 text-primary mt-1 mr-2\\" fill=\\"none\\" stroke=\\"currentColor\\" viewBox=\\"0 0 24 24\\">\\n                    <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M5 13l4 4L19 7\\" />\\n                  </svg>\\n                  <span>{benefit}</span>\\n                </li>\\n              {/each}\\n            </ul>\\n            <a href=\\"/contact\\" class=\\"btn-primary block text-center\\">\\n              Donate {level.amount}\\n            </a>\\n          </div>\\n        {/each}\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Other Ways to Give -->\\n  <section class=\\"py-16 bg-white\\">\\n    <div class=\\"container\\">\\n      <h2 class=\\"text-3xl font-bold mb-12 text-center\\">Other Ways to Give</h2>\\n      <div class=\\"grid gap-8 md:grid-cols-3\\">\\n        {#each otherWaysToGive as way}\\n          <div class=\\"bg-gray-50 rounded-lg p-6\\">\\n            <h3 class=\\"text-xl font-bold mb-3\\">{way.title}</h3>\\n            <p class=\\"text-gray-600 mb-4\\">{way.description}</p>\\n            <a href={way.link} class=\\"text-primary hover:text-primary-dark font-semibold\\">\\n              Learn More →\\n            </a>\\n          </div>\\n        {/each}\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Tax Information -->\\n  <section class=\\"py-16\\">\\n    <div class=\\"container\\">\\n      <div class=\\"bg-primary text-white rounded-lg p-8\\">\\n        <h2 class=\\"text-2xl font-bold mb-4\\">Tax Information</h2>\\n        <p class=\\"text-lg mb-6\\">\\n          Kehillat Harlem is a 501(c)(3) non-profit organization. All donations are tax-deductible to the extent allowed by law.\\n        </p>\\n        <div class=\\"text-sm opacity-90\\">\\n          Tax ID: XX-XXXXXXX\\n        </div>\\n      </div>\\n    </div>\\n  </section>\\n\\n  <!-- Contact -->\\n  <section class=\\"py-16 bg-white\\">\\n    <div class=\\"container text-center\\">\\n      <h2 class=\\"text-3xl font-bold mb-6\\">Questions About Giving?</h2>\\n      <p class=\\"text-xl text-gray-600 mb-8 max-w-2xl mx-auto\\">\\n        Our team is here to help you with any questions about donations, planned giving, or other ways to support our community.\\n      </p>\\n      <a href=\\"/contact\\" class=\\"btn-primary\\">\\n        Contact Us\\n      </a>\\n    </div>\\n  </section>\\n</div>\\n\\n<style lang=\\"postcss\\">\\n  .container {\\n\\n    margin-left: auto;\\n\\n    margin-right: auto;\\n\\n    max-width: 80rem;\\n\\n    padding-left: 1rem;\\n\\n    padding-right: 1rem\\n}\\n\\n@media (min-width: 640px) {\\n\\n    .container {\\n\\n        padding-left: 1.5rem;\\n\\n        padding-right: 1.5rem\\n    }\\n}\\n\\n@media (min-width: 1024px) {\\n\\n    .container {\\n\\n        padding-left: 2rem;\\n\\n        padding-right: 2rem\\n    }\\n}\\n\\n  .btn-primary {\\n\\n    display: inline-block;\\n\\n    border-radius: 0.5rem;\\n\\n    --tw-bg-opacity: 1;\\n\\n    background-color: rgb(255 107 107 / var(--tw-bg-opacity, 1));\\n\\n    padding-left: 1.5rem;\\n\\n    padding-right: 1.5rem;\\n\\n    padding-top: 0.75rem;\\n\\n    padding-bottom: 0.75rem;\\n\\n    font-weight: 600;\\n\\n    --tw-text-opacity: 1;\\n\\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1));\\n\\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;\\n\\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\\n\\n    transition-duration: 200ms\\n}\\n\\n  .btn-primary:hover {\\n\\n    background-color: rgb(255 107 107 / 0.9)\\n}\\n</style> "],"names":[],"mappings":"AA6IE,yBAAW,CAET,WAAW,CAAE,IAAI,CAEjB,YAAY,CAAE,IAAI,CAElB,SAAS,CAAE,KAAK,CAEhB,YAAY,CAAE,IAAI,CAElB,aAAa,CAAE;AACnB,CAEA,MAAO,YAAY,KAAK,CAAE,CAEtB,yBAAW,CAEP,YAAY,CAAE,MAAM,CAEpB,aAAa,CAAE;AACvB,IAAI,CACJ,CAEA,MAAO,YAAY,MAAM,CAAE,CAEvB,yBAAW,CAEP,YAAY,CAAE,IAAI,CAElB,aAAa,CAAE;AACvB,IAAI,CACJ,CAEE,2BAAa,CAEX,OAAO,CAAE,YAAY,CAErB,aAAa,CAAE,MAAM,CAErB,eAAe,CAAE,CAAC,CAElB,gBAAgB,CAAE,IAAI,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,eAAe,CAAC,EAAE,CAAC,CAAC,CAE5D,YAAY,CAAE,MAAM,CAEpB,aAAa,CAAE,MAAM,CAErB,WAAW,CAAE,OAAO,CAEpB,cAAc,CAAE,OAAO,CAEvB,WAAW,CAAE,GAAG,CAEhB,iBAAiB,CAAE,CAAC,CAEpB,KAAK,CAAE,IAAI,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,iBAAiB,CAAC,EAAE,CAAC,CAAC,CAEnD,mBAAmB,CAAE,KAAK,CAAC,CAAC,gBAAgB,CAAC,CAAC,YAAY,CAAC,CAAC,qBAAqB,CAAC,CAAC,IAAI,CAAC,CAAC,MAAM,CAE/F,0BAA0B,CAAE,aAAa,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAExD,mBAAmB,CAAE;AACzB,CAEE,2BAAY,MAAO,CAEjB,gBAAgB,CAAE,IAAI,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,GAAG;AAC3C"}`
+  code: '.bg-primary.svelte-omskz2{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}a[href*="stripe.com"].svelte-omskz2{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1));transition-property:all;transition-duration:200ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}a[href*="stripe.com"].svelte-omskz2:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1));text-decoration-line:none}a[href*="stripe.com"].svelte-omskz2{transform:translateY(0)}a[href*="stripe.com"].svelte-omskz2:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1));--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);transform:translateY(-1px)}',
+  map: `{"version":3,"file":"+page.svelte","sources":["+page.svelte"],"sourcesContent":["<script>\\n  import content from '$content/donate.json';\\n  const { pageTitle, mainDescription, recommendedDonation, donationTiers, oneTimeGift } = content;\\n<\/script>\\n\\n<div class=\\"container mx-auto px-4 py-12 max-w-6xl\\">\\n  <div class=\\"text-center mb-12\\">\\n    <h1 class=\\"text-3xl md:text-4xl font-bold mb-6\\">{pageTitle}</h1>\\n    <p class=\\"text-xl mb-4\\">\\n      {mainDescription}\\n    </p>\\n    <p class=\\"text-lg text-gray-700\\">\\n      {recommendedDonation}\\n    </p>\\n  </div>\\n\\n  <!-- Donation Tiers -->\\n  <div class=\\"grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12\\">\\n    {#each donationTiers as tier}\\n      <div class=\\"bg-white rounded-lg shadow-md overflow-hidden\\">\\n        <div class=\\"p-6\\">\\n          <h2 class=\\"text-2xl font-bold mb-4\\">{tier.title}</h2>\\n          <p class=\\"text-gray-600 mb-6\\">\\n            {tier.description}\\n          </p>\\n          <div class=\\"space-y-3\\">\\n            {#each tier.options as option}\\n              <a \\n                href={option.link}\\n                target=\\"_blank\\"\\n                rel=\\"noopener noreferrer\\"\\n                class=\\"block w-full text-center px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors duration-200\\"\\n              >\\n                {option.label}\\n              </a>\\n            {/each}\\n          </div>\\n        </div>\\n      </div>\\n    {/each}\\n  </div>\\n\\n  <!-- One Time Gift -->\\n  <div class=\\"text-center\\">\\n    <a \\n      href={oneTimeGift.link}\\n      target=\\"_blank\\"\\n      rel=\\"noopener noreferrer\\"\\n      class=\\"inline-block px-8 py-4 bg-blue-500 text-white text-xl font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-200\\"\\n    >\\n      {oneTimeGift.label}\\n    </a>\\n  </div>\\n</div>\\n\\n<style lang=\\"postcss\\">\\n  .bg-primary {\\n    --tw-bg-opacity: 1;\\n    background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));\\n}\\n\\n  /* Enhanced hover styles for donation buttons */\\n  a[href*=\\"stripe.com\\"] {\\n    --tw-text-opacity: 1;\\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1));\\n    transition-property: all;\\n    transition-duration: 200ms;\\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\\n}\\n  a[href*=\\"stripe.com\\"]:hover {\\n    --tw-text-opacity: 1;\\n    color: rgb(255 255 255 / var(--tw-text-opacity, 1));\\n    text-decoration-line: none;\\n}\\n  a[href*=\\"stripe.com\\"] {\\n    transform: translateY(0);\\n  }\\n\\n  a[href*=\\"stripe.com\\"]:hover {\\n    --tw-bg-opacity: 1;\\n    background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));\\n    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\\n    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\\n    transform: translateY(-1px);\\n}\\n</style> "],"names":[],"mappings":"AAwDE,yBAAY,CACV,eAAe,CAAE,CAAC,CAClB,gBAAgB,CAAE,IAAI,EAAE,CAAC,EAAE,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,eAAe,CAAC,EAAE,CAAC,CAC7D,CAGE,CAAC,CAAC,IAAI,EAAE,YAAY,eAAE,CACpB,iBAAiB,CAAE,CAAC,CACpB,KAAK,CAAE,IAAI,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,iBAAiB,CAAC,EAAE,CAAC,CAAC,CACnD,mBAAmB,CAAE,GAAG,CACxB,mBAAmB,CAAE,KAAK,CAC1B,0BAA0B,CAAE,aAAa,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAC3D,CACE,CAAC,CAAC,IAAI,EAAE,YAAY,eAAC,MAAO,CAC1B,iBAAiB,CAAE,CAAC,CACpB,KAAK,CAAE,IAAI,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,iBAAiB,CAAC,EAAE,CAAC,CAAC,CACnD,oBAAoB,CAAE,IAC1B,CACE,CAAC,CAAC,IAAI,EAAE,YAAY,eAAE,CACpB,SAAS,CAAE,WAAW,CAAC,CACzB,CAEA,CAAC,CAAC,IAAI,EAAE,YAAY,eAAC,MAAO,CAC1B,eAAe,CAAE,CAAC,CAClB,gBAAgB,CAAE,IAAI,EAAE,CAAC,EAAE,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,eAAe,CAAC,EAAE,CAAC,CAAC,CAC1D,WAAW,CAAE,kEAAkE,CAC/E,mBAAmB,CAAE,8EAA8E,CACnG,UAAU,CAAE,IAAI,uBAAuB,CAAC,UAAU,CAAC,CAAC,CAAC,IAAI,gBAAgB,CAAC,UAAU,CAAC,CAAC,CAAC,IAAI,WAAW,CAAC,CACvG,SAAS,CAAE,WAAW,IAAI,CAC9B"}`
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  const givingLevels = [
-    {
-      name: "Friend",
-      amount: "$180",
-      description: "Support our weekly Shabbat kiddush and community meals.",
-      benefits: [
-        "Recognition in our annual report",
-        "Priority registration for high holiday services"
-      ]
-    },
-    {
-      name: "Sustainer",
-      amount: "$360",
-      description: "Help us maintain and improve our community spaces.",
-      benefits: [
-        "All Friend level benefits",
-        "Reserved seating at high holiday services",
-        "Invitation to annual donor appreciation event"
-      ]
-    },
-    {
-      name: "Builder",
-      amount: "$1,800",
-      description: "Invest in our community's growth and educational programs.",
-      benefits: [
-        "All Sustainer level benefits",
-        "Private meeting with the Rabbi",
-        "Recognition on our donor wall"
-      ]
-    }
-  ];
-  const otherWaysToGive = [
-    {
-      title: "Sponsor a Kiddush",
-      description: "Honor a special occasion or remember a loved one by sponsoring a Shabbat kiddush.",
-      link: "/contact"
-    },
-    {
-      title: "Planned Giving",
-      description: "Include Kehillat Harlem in your estate planning to ensure our community's future.",
-      link: "/contact"
-    },
-    {
-      title: "Matching Gifts",
-      description: "Many employers match charitable contributions. Check if your company participates.",
-      link: "/contact"
-    }
-  ];
+  const { pageTitle: pageTitle2, mainDescription: mainDescription2, recommendedDonation: recommendedDonation2, donationTiers: donationTiers2, oneTimeGift: oneTimeGift2 } = content;
   $$result.css.add(css);
-  return `<div class="bg-gray-50 min-h-screen"> <section class="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white" data-svelte-h="svelte-1osgp2s"><div class="absolute inset-0 bg-black/50 z-0"></div> <div class="container relative z-10 svelte-1b57m3i"><h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Support Our Community</h1> <p class="text-xl text-center max-w-2xl mx-auto">Your generous support helps us maintain our inclusive community and expand our programming.</p></div></section>  <section class="py-16"><div class="container svelte-1b57m3i"><h2 class="text-3xl font-bold mb-12 text-center" data-svelte-h="svelte-5e0hr9">Annual Giving Levels</h2> <div class="grid gap-8 md:grid-cols-3">${each(givingLevels, (level) => {
-    return `<div class="bg-white rounded-lg shadow-md p-6"><h3 class="text-2xl font-bold mb-2">${escape(level.name)}</h3> <div class="text-primary text-3xl font-bold mb-4">${escape(level.amount)}</div> <p class="text-gray-600 mb-6">${escape(level.description)}</p> <ul class="space-y-2 mb-6">${each(level.benefits, (benefit) => {
-      return `<li class="flex items-start"><svg class="w-5 h-5 text-primary mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span>${escape(benefit)}</span> </li>`;
-    })}</ul> <a href="/contact" class="btn-primary block text-center svelte-1b57m3i">Donate ${escape(level.amount)}</a> </div>`;
-  })}</div></div></section>  <section class="py-16 bg-white"><div class="container svelte-1b57m3i"><h2 class="text-3xl font-bold mb-12 text-center" data-svelte-h="svelte-147j3j3">Other Ways to Give</h2> <div class="grid gap-8 md:grid-cols-3">${each(otherWaysToGive, (way) => {
-    return `<div class="bg-gray-50 rounded-lg p-6"><h3 class="text-xl font-bold mb-3">${escape(way.title)}</h3> <p class="text-gray-600 mb-4">${escape(way.description)}</p> <a${add_attribute("href", way.link, 0)} class="text-primary hover:text-primary-dark font-semibold">Learn More →</a> </div>`;
-  })}</div></div></section>  <section class="py-16" data-svelte-h="svelte-1uc925w"><div class="container svelte-1b57m3i"><div class="bg-primary text-white rounded-lg p-8"><h2 class="text-2xl font-bold mb-4">Tax Information</h2> <p class="text-lg mb-6">Kehillat Harlem is a 501(c)(3) non-profit organization. All donations are tax-deductible to the extent allowed by law.</p> <div class="text-sm opacity-90">Tax ID: XX-XXXXXXX</div></div></div></section>  <section class="py-16 bg-white" data-svelte-h="svelte-7rul93"><div class="container text-center svelte-1b57m3i"><h2 class="text-3xl font-bold mb-6">Questions About Giving?</h2> <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Our team is here to help you with any questions about donations, planned giving, or other ways to support our community.</p> <a href="/contact" class="btn-primary svelte-1b57m3i">Contact Us</a></div></section> </div>`;
+  return `<div class="container mx-auto px-4 py-12 max-w-6xl"><div class="text-center mb-12"><h1 class="text-3xl md:text-4xl font-bold mb-6">${escape(pageTitle2)}</h1> <p class="text-xl mb-4">${escape(mainDescription2)}</p> <p class="text-lg text-gray-700">${escape(recommendedDonation2)}</p></div>  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">${each(donationTiers2, (tier) => {
+    return `<div class="bg-white rounded-lg shadow-md overflow-hidden"><div class="p-6"><h2 class="text-2xl font-bold mb-4">${escape(tier.title)}</h2> <p class="text-gray-600 mb-6">${escape(tier.description)}</p> <div class="space-y-3">${each(tier.options, (option) => {
+      return `<a${add_attribute("href", option.link, 0)} target="_blank" rel="noopener noreferrer" class="block w-full text-center px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors duration-200 svelte-omskz2">${escape(option.label)} </a>`;
+    })} </div></div> </div>`;
+  })}</div>  <div class="text-center"><a${add_attribute("href", oneTimeGift2.link, 0)} target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-blue-500 text-white text-xl font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-200 svelte-omskz2">${escape(oneTimeGift2.label)}</a></div> </div>`;
 });
 export {
   Page as default
