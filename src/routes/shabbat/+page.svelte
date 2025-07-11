@@ -57,10 +57,20 @@
         location: ev.location,
       }));
 
-      // Filter Friday night themed events
-      fridayNightEvents = events
+      // Filter Friday night themed events - get only the next occurrence of each type
+      const eventsByType = new Map<string, Event>();
+      
+      events
         .filter((ev: Event) => TARGET_TITLES_FRIDAY_NIGHT.has(ev.title))
-        .slice(0, 10); // Get next 5 themed events
+        .forEach((ev: Event) => {
+          if (!eventsByType.has(ev.title)) {
+            eventsByType.set(ev.title, ev);
+          }
+        });
+      
+      // Convert to array and sort by date
+      fridayNightEvents = Array.from(eventsByType.values())
+        .sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
 
       // Filter Friday night service times
       upcomingFridayServices = events
@@ -136,7 +146,12 @@
 
       <!-- Friday Night Themes Grid -->
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {#each content.sections.fridayNight.themes as theme}
+        {#each fridayNightEvents as event}
+          {@const theme = content.sections.fridayNight.themes.find(t => 
+            t.theme === event.title || 
+            (t.week === "5th" && event.title === "Shabbat at Hops")
+          )}
+          {#if theme}
           <div class="group relative overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
             <!-- Theme Image -->
             <div class="aspect-w-16 aspect-h-9 relative h-48 overflow-hidden bg-gray-200">
@@ -151,40 +166,39 @@
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div class="absolute bottom-4 left-4 text-white">
-                <span class="text-sm font-semibold opacity-90">{theme.week} Friday</span>
-                <h3 class="text-xl font-bold">{theme.theme === "Shabbat at Hops" ? theme.theme : theme.theme}</h3>
+                <span class="text-sm font-semibold opacity-90">{theme.week} Friday 
+                  {#if theme.week === '5th'}
+                  (If the month has a 5th Friday)
+                  {/if}
+                </span>
+                <h3 class="text-xl font-bold">{event.title}</h3>
               </div>
             </div>
             
-            <!-- Next Occurrence -->
-            {#if !loading && fridayNightEvents.length > 0}
-              {#each fridayNightEvents as event}
-                {#if event.title === theme.theme || (theme.week === "5th" && event.title === "Shabbat at Hops")}
-                  <div class="p-4 bg-white">
-                    <p class="text-sm text-gray-600 mb-1">Next occurrence:</p>
-                    <p class="font-semibold">
-                      {event.startDate.toLocaleDateString("en-US", { 
-                        month: 'short', 
-                        day: 'numeric',
-                        year: 'numeric'
-                      })}
-                    </p>
-                    <a 
-                      href={event.url} 
-                      target="_blank" 
-                      rel="noopener"
-                      class="inline-flex items-center mt-2 text-sm text-blue-600 hover:text-blue-800"
-                    >
-                      View in Calendar
-                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                      </svg>
-                    </a>
-                  </div>
-                {/if}
-              {/each}
-            {/if}
+            <!-- Event Details -->
+            <div class="p-4 bg-white">
+              <p class="text-sm text-gray-600 mb-1">Date:</p>
+              <p class="font-semibold">
+                {event.startDate.toLocaleDateString("en-US", { 
+                  month: 'short', 
+                  day: 'numeric',
+                  year: 'numeric'
+                })}
+              </p>
+              <a 
+                href={event.url} 
+                target="_blank" 
+                rel="noopener"
+                class="inline-flex items-center mt-2 text-sm text-blue-600 hover:text-blue-800"
+              >
+                View in Calendar
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
           </div>
+          {/if}
         {/each}
       </div>
     </section>
