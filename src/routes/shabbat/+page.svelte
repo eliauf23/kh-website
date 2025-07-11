@@ -9,6 +9,8 @@
   const MAX_RESULTS = 50;
   
   // Event titles we're looking for
+  // TODO: get them from the theme property in shabbat.json
+
   const TARGET_TITLES_FRIDAY_NIGHT = new Set([
     "Learner's Shabbat",
     "Sushi Shabbat",
@@ -58,7 +60,7 @@
       // Filter Friday night themed events
       fridayNightEvents = events
         .filter((ev: Event) => TARGET_TITLES_FRIDAY_NIGHT.has(ev.title))
-        .slice(0, 5); // Get next 5 themed events
+        .slice(0, 10); // Get next 5 themed events
 
       // Filter Friday night service times
       upcomingFridayServices = events
@@ -150,7 +152,7 @@
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div class="absolute bottom-4 left-4 text-white">
                 <span class="text-sm font-semibold opacity-90">{theme.week} Friday</span>
-                <h3 class="text-xl font-bold">{theme.theme}</h3>
+                <h3 class="text-xl font-bold">{theme.theme === "Shabbat at Hops" ? theme.theme : theme.theme}</h3>
               </div>
             </div>
             
