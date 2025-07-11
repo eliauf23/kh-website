@@ -36,6 +36,7 @@ jobs:
           touch build/.nojekyll
         env:
           NODE_ENV: production
+          PUBLIC_GCAL_API_KEY: ${{ secrets.PUBLIC_GCAL_API_KEY }}
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
