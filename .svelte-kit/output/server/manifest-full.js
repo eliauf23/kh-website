@@ -7,10 +7,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "kh-website/_app",
-	assets: new Set([".nojekyll","adam-rosenberg.png","arielle.jpg","elizabeth-aufzien.jpg","homepage-image.jpg","jay-worenklein.png","jonathan-schachter.png","logo.png","marisa-laks.jpg","mark.png","purim.png","rabbi-kyle.jpeg","rosh-chodesh.png","shteibel-sundays.jpg"]),
+	assets: new Set([".nojekyll","adam-rosenberg.png","arielle-flax.jpg","elizabeth-aufzien.jpg","homepage-image.jpg","jay-worenklein.png","jonathan-schachter.png","july_18.jpeg","july_25.jpeg","logo.png","marisa-laks.jpg","mark-eckstein.png","purim.png","rabbi-kyle.jpeg","rosh-chodesh.png","shteibel-sundays.jpg"]),
 	mimeTypes: {".png":"image/png",".jpg":"image/jpeg",".jpeg":"image/jpeg"},
 	_: {
-		client: {start:"_app/immutable/entry/start.NFKgb3xn.js",app:"_app/immutable/entry/app.5lSTBgN6.js",imports:["_app/immutable/entry/start.NFKgb3xn.js","_app/immutable/chunks/BVjwod7r.js","_app/immutable/chunks/C5pbqEUi.js","_app/immutable/entry/app.5lSTBgN6.js","_app/immutable/chunks/Cb9AzWa1.js","_app/immutable/chunks/C5pbqEUi.js","_app/immutable/chunks/DaZRgkT6.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.BtjtYNuH.js",app:"_app/immutable/entry/app.DXsXxuGv.js",imports:["_app/immutable/entry/start.BtjtYNuH.js","_app/immutable/chunks/cZ4tCy71.js","_app/immutable/chunks/DZsSnbZO.js","_app/immutable/entry/app.DXsXxuGv.js","_app/immutable/chunks/Cb9AzWa1.js","_app/immutable/chunks/DZsSnbZO.js","_app/immutable/chunks/CYmdPfwe.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),

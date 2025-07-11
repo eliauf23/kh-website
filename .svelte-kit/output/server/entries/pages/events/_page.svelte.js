@@ -13,7 +13,7 @@ const upcomingEvents = [
     title: "Shtiebel Sundays",
     date: "Every Sunday",
     description: "Join us on Sundays for a rotating lineup of events! Each week, we'll open the ONLY kosher café in Harlem, offering coffee and a selection of sweet treats for all to enjoy. \nWe're excited to launch this initiative in mid-December, featuring Hebrew-speaking hours, an art gallery, and a family Hanukkah party! Interested in showcasing a program at the Shtiebel? Get in touch!",
-    image: "https://eliauf23.github.io/kh-website/shtiebel-sundays.jpg"
+    image: "https://eliauf23.github.io/kh-website/shteibel-sundays.jpg"
   }
 ];
 const calendar = {

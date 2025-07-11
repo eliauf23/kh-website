@@ -11,7 +11,7 @@ const trustees = [
   },
   {
     name: "Mark Eckstein",
-    image: "https://eliauf23.github.io/kh-website/mark-eckstein.jpg"
+    image: "https://eliauf23.github.io/kh-website/mark-eckstein.png"
   },
   {
     name: "Arielle Flax",
@@ -23,7 +23,7 @@ const trustees = [
   },
   {
     name: "Adam Rosenberg",
-    image: "https://eliauf23.github.io/kh-website/adam-rosenberg.jpg"
+    image: "https://eliauf23.github.io/kh-website/adam-rosenberg.png"
   },
   {
     name: "Jonathan Schachter",

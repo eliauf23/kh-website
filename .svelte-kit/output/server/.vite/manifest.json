@@ -74,7 +74,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.B5K60-UP.css"
+      "_app/immutable/assets/_layout.DzN_C9iY.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -146,7 +146,7 @@
       "src/content/shabbat.json"
     ],
     "css": [
-      "_app/immutable/assets/_page.D0eLtupq.css"
+      "_app/immutable/assets/_page.C3kmauCC.css"
     ]
   },
   "src/routes/team/+page.svelte": {

@@ -8,23 +8,28 @@ const sections = {
     themes: [
       {
         week: "1st",
-        theme: "Learner's Shabbat"
+        theme: "Learner's Shabbat",
+        image: "https://eliauf23.github.io/kh-website/learners-shabbat.jpg"
       },
       {
         week: "2nd",
-        theme: "Sushi Shabbat"
+        theme: "Sushi Shabbat",
+        image: "https://eliauf23.github.io/kh-website/sushi-shabbat.jpg"
       },
       {
         week: "3rd",
-        theme: "Shabbat Around the World"
+        theme: "Shabbat Around the World",
+        image: "https://eliauf23.github.io/kh-website/july_18.jpeg"
       },
       {
         week: "4th",
-        theme: "Harlem Home Hoppin' Meals"
+        theme: "Harlem Home Hoppin' Shabbat",
+        image: "https://eliauf23.github.io/kh-website/july_25.jpeg"
       },
       {
         week: "5th",
-        theme: "When a month has five Shabbats, we celebrate the last one at Harlem Hops"
+        theme: "Shabbat at Hops",
+        image: "https://eliauf23.github.io/kh-website/harlem-hops.jpg"
       }
     ]
   },
