@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.svelte-kit/*
+.svelte-kit/ambient.d.ts
+.svelte-kit/generated/server/internal.js
